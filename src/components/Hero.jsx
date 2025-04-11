@@ -21,6 +21,26 @@ const Hero = () => {
       });
   }, []);
 
+  // utility function to render stars based on rating
+  const rating = 4.8;
+  function renderStars(rating) {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<i key={i} className="bx bxs-star text-amber-500 mr-1"></i>);
+      } else if (i > rating && i < rating + 1) {
+        stars.push(
+          <i key={i} className="bx bxs-star-half text-amber-500 mr-1"></i>
+        );
+      } else {
+        stars.push(<i key={i} className="bx bx-star text-amber-500 mr-1"></i>);
+      }
+    }
+
+    return stars;
+  }
+
   return (
     <div className="isolate">
       <div className="absolute inset-0 -z-10">
@@ -81,6 +101,14 @@ const Hero = () => {
                 <span className="flex items-center justify-center w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 text-xs font-medium bg-neutral-900 dark:bg-amber-500 text-white dark:text-neutral-900">
                   +5k
                 </span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center">
+                  {renderStars(rating)}
+                  <span className="text-neutral-600 dark:text-neutral-400 text-sm ml-1">
+                    {rating}/5
+                  </span>
+                </div>
               </div>
             </div>
           </div>
