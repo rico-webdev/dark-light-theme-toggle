@@ -1,4 +1,26 @@
+import { useState, useEffect } from "react";
+
 const Hero = () => {
+  const [userData, setUserData] = useState([]);
+
+  // Fetching user images from the API
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=3")
+      .then((response) => response.json())
+      .then((data) => {
+        try {
+          if (!data) {
+            throw new Error("Invalid data format");
+          } else {
+            setUserData(data.results);
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return;
+        }
+      });
+  }, []);
+
   return (
     <div className="isolate">
       <div className="absolute inset-0 -z-10">
@@ -44,6 +66,22 @@ const Hero = () => {
                 <i className="bx bx-book-open mr-2 lg:mr-3 text-lg lg:text-xl opacity-70 group-hover:opacity-100 transition-opacity"></i>
                 <span>Documentation</span>
               </button>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-5 sm:items-center pt-6 lg:pt-7 border-t border-neutral-200 dark:border-neutral-800">
+              <div className="flex -space-x-3">
+                {userData &&
+                  userData.map((user, index) => (
+                    <img
+                      key={index}
+                      src={user.picture.large}
+                      alt={`User ${user.name.first} ${user.name.last}`}
+                      className="w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 objecfit-cover shadow-lg"
+                    />
+                  ))}
+                <span className="flex items-center justify-center w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 text-xs font-medium bg-neutral-900 dark:bg-amber-500 text-white dark:text-neutral-900">
+                  +5k
+                </span>
+              </div>
             </div>
           </div>
         </div>
