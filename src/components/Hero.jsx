@@ -109,6 +109,13 @@ const Hero = () => {
                     {rating}/5
                   </span>
                 </div>
+                <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+                  Trusted by{" "}
+                  <span className="font-bold text-neutral-900 dark:text-white">
+                    5,000+
+                  </span>{" "}
+                  developers worldwide
+                </p>
               </div>
             </div>
           </div>
