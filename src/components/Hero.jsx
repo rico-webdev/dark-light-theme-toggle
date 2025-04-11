@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [userData, setUserData] = useState([]);
-
   // Fetching user images from the API
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=3")
@@ -43,12 +42,15 @@ const Hero = () => {
 
   return (
     <div className="isolate">
+      {/* background blur highliht in the top left */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-amber-400 dark:bg-amber500 rounded-full blur-3xl opacity-20 "></div>
       </div>
       <div className="container mx-auto px-6 py-20 md:py-24 lg:py-28 xl-py-32">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
           <div className="flex-1 space-y-6 lg:space-y-7">
+            {/* ---------------------------------------------------------------------------------------------------------------------------- */}
+            {/* TEXT CONTENT HERO SECTION  */}
             <div className="space-y-4 lg:space-y-5">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-900 text-amber-400">
@@ -83,7 +85,7 @@ const Hero = () => {
                 <span>Start Coding</span>
               </button>
               <button className="px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white font-medium shadow-lg flex items-center transition group cursor-pointer border border-neutral-300 dark:border-neutral-700">
-                <i className="bx bx-book-open mr-2 lg:mr-3 text-lg lg:text-xl opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                <i className="bx bx-book-open mr-2 lg:mr-3 text-lg lg:text-xl opacity-70 group-hover:rotate-360 transition-transform  duration-600"></i>
                 <span>Documentation</span>
               </button>
             </div>
@@ -94,7 +96,7 @@ const Hero = () => {
                     <img
                       key={index}
                       src={user.picture.large}
-                      alt={`User ${user.name.first} ${user.name.last}`}
+                      alt={`${user.name.first} ${user.name.last}`}
                       className="w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 objecfit-cover shadow-lg"
                     />
                   ))}
