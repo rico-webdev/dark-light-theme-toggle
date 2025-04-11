@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Hero from "./components/Hero";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -41,12 +42,14 @@ const App = () => {
 
       <button
         onClick={toggleDarkMode}
-        className="fixed top-3 lg:top-4 right-3 lg:right-4 w-9 h-9 lg:w-10 lg:h-10 flex justify-center items-center rounded-full bg-amber-500 text-neutral-950 shadow-lg hover:bg-amber-600 transition-colors cursor-pointer"
+        className="fixed z-10 top-3 lg:top-4 right-3 lg:right-4 w-9 h-9 lg:w-10 lg:h-10 flex justify-center items-center rounded-full bg-amber-500 text-neutral-950 shadow-lg hover:bg-amber-600 transition-colors cursor-pointer"
       >
         <i
           className={`bx bx-${isDarkMode ? "sun" : "moon"} text-lg lg:text-xl`}
         ></i>
       </button>
+
+      <Hero />
     </div>
   );
 };
