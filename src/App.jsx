@@ -4,8 +4,16 @@ import Hero from "./components/Hero";
 import { usePersistedState } from "./hooks/usePersistedState";
 
 const App = () => {
+  // check if the user has a prefered theme in the system settings
+  const preferedTheme = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
   // use custom hook to set init state with validation
-  const [isDarkMode, setIsDarkMode] = usePersistedState("darkMode", false);
+  const [isDarkMode, setIsDarkMode] = usePersistedState(
+    "darkMode",
+    preferedTheme || true
+  );
 
   function toggleDarkMode() {
     setIsDarkMode((prev) => !prev);

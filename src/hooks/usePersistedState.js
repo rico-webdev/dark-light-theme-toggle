@@ -7,8 +7,9 @@ export function usePersistedState(key, initialValue) {
   //     typescript generics to allow for any type of initial value: input => output
   const [state, setState] = useState(() => {
     const savedValue = getItem(key);
-    return savedValue || initialValue;
-    //return savedValue as T || initialValue;
+    return savedValue !== undefined && savedValue !== null
+      ? savedValue // savedValue as T
+      : initialValue;
   });
 
   useEffect(() => {

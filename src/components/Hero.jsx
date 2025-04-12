@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Hero = ({ isDarkMode }) => {
-  console.log("isDarkMode", isDarkMode);
   const [userData, setUserData] = useState([]);
   // Fetching user images from the API
   useEffect(() => {
@@ -68,7 +67,7 @@ const Hero = ({ isDarkMode }) => {
                   Without Limits
                 </span>
               </h1>
-              <p className="text-base lg:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl font-light">
+              <p className="text-base lg:text text-neutral-700 dark:text-neutral-300 max-w-2xl font-light">
                 Elevate your web projects with our streamlined design system
                 powerd by the latest Tailwind CSS v4. Create stunning user
                 experiences with state-of-the-art theme switching.
