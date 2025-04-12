@@ -162,12 +162,22 @@ const Hero = ({ isDarkMode }) => {
                     </span>
                   </div>
                   <button className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center rounded-full bg-amber-500 text-neutral-900 hover:bg-amber-600 cursor-pointer hover:rotate-360 duration-300 transition-transform">
-                    <i className="bx bx-copy "></i>
+                    <i className="bx bx-copy text-sm"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="hidden md:block absolute bottom-8 left-8 lg:bottom-10 lg:left-10 animate-bounce">
+        <div className="bg-neutral-900 text-white px-2.5 py-1.5 rounded-lg text-xm lg:text-sm flex items-center shadow-lg">
+          <i className="bx bx-arrow-to-left mr-1 text-amber-500"></i>responsive
+        </div>
+      </div>
+      <div className="hidden md:block absolute top-25 right-[15%] lg:top-20 lg:right-[20%] animate-bounce">
+        <div className="bg-neutral-900 text-white px-2.5 py-1.5 rounded-lg text-xm lg:text-sm flex items-center shadow-lg">
+          <i className="bx bx-check-circle mr-1 text-amber-500"></i>Accessible
         </div>
       </div>
     </div>
