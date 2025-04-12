@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-const Hero = () => {
+const Hero = ({ isDarkMode }) => {
+  console.log("isDarkMode", isDarkMode);
   const [userData, setUserData] = useState([]);
   // Fetching user images from the API
   useEffect(() => {
@@ -81,7 +82,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-wrap gap-3 lg:gap-4">
               <button className="px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg bg-neutral-900 hover:bg-black text-white dark:bg-amber-500 dark:hover:bg-amber-600 dark:text-neutral-900 font-medium shadow-lg hover:shadow-neutral-900/20 dark:hover:shadow-amber-500/20 flex items-center transition group cursor-pointer">
-                <i className="bx bx-code-alt mr-2 lg:mr-3 text-lg lg:text-xl group-hover:rotate-12 transition-transform"></i>
+                <i className="bx bx-code-alt mr-2 lg:mr-3 text-lg lg:text-xl group-hover:rotate-20 transition-transform"></i>
                 <span>Start Coding</span>
               </button>
               <button className="px-6 py-3 lg:px-7 lg:py-3.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-900 dark:text-white font-medium shadow-lg flex items-center transition group cursor-pointer border border-neutral-300 dark:border-neutral-700">
@@ -111,13 +112,59 @@ const Hero = () => {
                     {rating}/5
                   </span>
                 </div>
-                <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                   Trusted by{" "}
                   <span className="font-bold text-neutral-900 dark:text-white">
                     5,000+
                   </span>{" "}
                   developers worldwide
                 </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 w-full">
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-indigo-900 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
+              <div className="relative bg-white dark:bg-neutral-900 p-4 lg:p-5 xl:p-6 rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800">
+                <div className="flex items-center justify-between mb-3 lg:mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-green-500"></span>
+                    <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-yellow-500"></span>
+                    <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-red-500"></span>
+                  </div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                    dark-mode.jsx
+                  </div>
+                </div>
+                <div className="h-56 md:h-60 lg:h-64 xl:h-72 rounded-lg bg-neutral-100 dark:bg-neutral-800 overflow-hidden relative">
+                  <img
+                    className="w-full h-full object-cover object-left-top "
+                    src={`/code-${isDarkMode ? "dark" : "light"}.png`}
+                    alt={`code snippet color theme ${
+                      isDarkMode ? "dark" : "light"
+                    }`}
+                  />
+                  <div className="absolute bottom-4 right-4">
+                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-r from-amber-500 to-indigo-900 flex items-center justify-center text-white shadow-lg animate-pulse">
+                      <i className="bx bx-brightness-half text-xl lg:text-2xl"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 lg:mt-4 flex justify-between items-center">
+                  <div className="flex gap-2">
+                    <span className="px-2.5 py-1 lg:px-3 rounded-full bg-neutral-900 text-amber-400 text-xs font-medium flex items-center">
+                      <i className="bx bxl-tailwind-css mr-1 flex items-center"></i>{" "}
+                      Tailwind v4
+                    </span>
+                    <span className="px-2.5 py-1 lg:px-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-indigo-900 dark:text-indigo-400 text-xs font-medium flex items-center">
+                      <i className="bx bxl-react mr-1 flex items-center"></i>
+                      React v19
+                    </span>
+                  </div>
+                  <button className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center rounded-full bg-amber-500 text-neutral-900 hover:bg-amber-600 cursor-pointer hover:rotate-360 duration-300 transition-transform">
+                    <i className="bx bx-copy "></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

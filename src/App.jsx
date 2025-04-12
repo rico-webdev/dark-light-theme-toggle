@@ -9,7 +9,6 @@ const App = () => {
 
   function toggleDarkMode() {
     setIsDarkMode((prev) => !prev);
-    console.log("toggled", isDarkMode);
   }
 
   // effect to set the dark mode class on the document element
@@ -58,7 +57,7 @@ const App = () => {
       </button>
 
       {/* HERO SECTION HERE */}
-      <Hero />
+      <Hero isDarkMode={isDarkMode} />
     </div>
   );
 };
