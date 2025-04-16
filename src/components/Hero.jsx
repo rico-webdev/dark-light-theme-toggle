@@ -160,7 +160,10 @@ const Hero = ({ isDarkMode }) => {
                       React v19
                     </span>
                   </div>
-                  <button className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center rounded-full bg-amber-500 text-neutral-900 hover:bg-amber-600 cursor-pointer hover:rotate-360 duration-300 transition-transform">
+                  <button
+                    aria-label="copy button without functionality"
+                    className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex items-center justify-center rounded-full bg-amber-500 text-neutral-900 hover:bg-amber-600 cursor-pointer hover:rotate-360 duration-300 transition-transform"
+                  >
                     <i className="bx bx-copy text-sm"></i>
                   </button>
                 </div>

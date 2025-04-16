@@ -56,6 +56,7 @@ const App = () => {
 
       {/* THEME MODE BUTTON HERE */}
       <button
+        aria-label="Toggle dark mode"
         onClick={toggleDarkMode}
         className="fixed z-10 top-3 lg:top-4 right-3 lg:right-4 w-9 h-9 lg:w-10 lg:h-10 flex justify-center items-center rounded-full bg-amber-500 text-neutral-950 shadow-lg hover:bg-amber-600 transition-colors cursor-pointer"
       >
