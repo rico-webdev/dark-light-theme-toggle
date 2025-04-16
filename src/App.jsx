@@ -12,7 +12,7 @@ const App = () => {
   // use custom hook to set init state with validation
   const [isDarkMode, setIsDarkMode] = usePersistedState(
     "darkMode",
-    preferedTheme || true
+    preferedTheme
   );
 
   function toggleDarkMode() {
