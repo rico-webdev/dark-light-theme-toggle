@@ -100,7 +100,7 @@ const Hero = ({ isDarkMode }) => {
                       className="w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 objecfit-cover shadow-lg"
                     />
                   ))}
-                <span className="flex items-center justify-center w-12 h-12 lg:w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 text-xs font-medium bg-neutral-900 dark:bg-amber-500 text-white dark:text-neutral-900">
+                <span className="flex items-center justify-center w-12 h-12 lg:min-w-15 lg:h-15 rounded-full border-2 border-white dark:border-neutral-900 text-xs font-medium bg-neutral-900 dark:bg-amber-500 text-white dark:text-neutral-900">
                   +5k
                 </span>
               </div>
